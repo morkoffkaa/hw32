@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+}
+
+
+.container {
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgb(128, 165, 165);
+    max-width: 1200px;
+
+}
+
+.slider {
+    height: 256px;
+    width: 256px;
+    border: 2px solid black;
+    background-color: rgb(128, 165, 165);
+    margin: 30px auto;
+}
+
+.slider-line {
+    height: 256px;
+    width: 1024px;
+    background-color: rgb(14, 50, 38);
+    display: flex;
+    position: relative;
+    left: 0px;
+    transition: all ease 1s;
+
+}
+
+button {
+    padding: 10px 40px;
+    border: 1px solid white;
+    background-color: rgb(26, 46, 32);
+    color: white;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: rgb(223, 239, 227);
+    color: black;
+}
+
+button:active {
+    background: black;
+    color: #fff;
+}
