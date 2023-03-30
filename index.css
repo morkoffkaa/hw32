@@ -12,15 +12,16 @@
 }
 
 .slider {
-    height: 256px;
+    height: 128px;
     width: 256px;
     border: 2px solid black;
     background-color: rgb(128, 165, 165);
     margin: 30px auto;
+    overflow: hidden;
 }
 
 .slider-line {
-    height: 256px;
+    height: 128px;
     width: 1024px;
     background-color: rgb(14, 50, 38);
     display: flex;
