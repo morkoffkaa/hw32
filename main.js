@@ -1,25 +1,35 @@
-const sliderLine = document.querySelector(".slider-line");
+const sliderLine = document.querySelector('.slider-line');
+const images = document.querySelectorAll('.img');
+const prevBtn = document.querySelector('.slider-back');
+const nextBtn = document.querySelector('.slider-next');
 
-let offset = 0;
+let counter = 0;
+const size = images[0].clientWidth;
 
-const buttonNext = document.querySelector(".slider-next");
-buttonNext.addEventListener("click", function() {
-  offset = offset - 256;
-  if (offset < -768) {
-    offset = 0; 
-    buttonNext.style.display = "none";
-    buttonBack.style.display = "block";
-  }
-  sliderLine.style.left = offset + "px";
+sliderLine.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+nextBtn.addEventListener('click', () => {
+    if (counter >= images.length - 1) return;
+    counter++;
+    sliderLine.style.transition = 'transform 0.4s ease-in-out';
+    sliderLine.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    if (counter === images.length - 1) {
+        nextBtn.style.display = 'none';
+    }
+    if (counter !== 0) {
+        prevBtn.style.display = 'block';
+    }
 });
 
-const buttonBack = document.querySelector(".slider-back");
-buttonBack.addEventListener("click", function() {
-  offset = offset + 256;
-  if (offset > 0) {
-    offset = -768;
-    buttonBack.style.display = "none"; 
-    buttonNext.style.display = "block";
-  }
-  sliderLine.style.left = offset + "px";
+prevBtn.addEventListener('click', () => {
+    if (counter <= 0) return;
+    counter--;
+    sliderLine.style.transition = 'transform 0.4s ease-in-out';
+    sliderLine.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    if (counter === 0) {
+        prevBtn.style.display = 'none';
+    }
+    if (counter !== images.length - 1) {
+        nextBtn.style.display = 'block';
+    }
 });
